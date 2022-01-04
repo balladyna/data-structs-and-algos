@@ -5,7 +5,7 @@
 
 prompt = ">>> "
 number_n_message = "Please choose a number from range 0 to 10:\n"
-number_m_message = "Please choose a second number from range 0 to 100 and we will check if the first number is a multiple (True) of this number number or not (False):\n"
+number_m_message = "Please choose a second number and we will check if it is a multiple (True) of the first number or not (False):\n"
 wrong_input_message = "Wrong input."
 wrong_value_message = "Wrong value."
 
@@ -15,7 +15,7 @@ def is_multiple():
     m = int(input(number_m_message + prompt))
     try:
         if 0 <= n <= 10 and 0 <= m <= 100:
-            if m % n == 0:
+            if n % m == 0:
                 print(True)
             else:
                 print(False)
