@@ -26,27 +26,26 @@ def generate_random():
     orig_list = list(phrase)
     orig_list[ran_pos1] = char1
     orig_list[ran_pos2] = char2
-    mod = ''.join(orig_list)
-    print(mod)
+    typo_sentence = ''.join(orig_list)
+    print(typo_sentence)
 
 
-g = 0
+typos_number = 0
 
 
-for number in range(0, 100):
-    if g < 8:
-        g = g
-        if number >= 92 and g < 8:
+for phrases_number in range(0, 100):
+    if typos_number < 8:
+        if phrases_number >= 92 and typos_number < 8:
             generate_random()
-            g = g + 1
+            typos_number = typos_number + 1
         else:
-            a = random.randint(0, 1)
-            if a == 0:
+            randomized_phrase = random.randint(0, 1)
+            if randomized_phrase == 0:
                 print(phrase)
                 continue
-            elif a == 1:
+            elif randomized_phrase == 1:
                 generate_random()
-                g = g + 1
-    elif g == 8:
+                typos_number = typos_number + 1
+    elif typos_number == 8:
         print(phrase)
 

@@ -22,17 +22,17 @@ def calculate():
     b_number_input = float(input(b_number_message))
     c_number = 0
     match operation_input:
-        case operation_input if operation_input == "1":
+        case "1":
             c_number = float(a_number_input + b_number_input)
-        case operation_input if operation_input == "2":
+        case "2":
             c_number = float(a_number_input - b_number_input)
-        case operation_input if operation_input == "3":
+        case "3":
             c_number = float(a_number_input * b_number_input)
-        case operation_input if operation_input == "4":
+        case "4":
             c_number = float(a_number_input / b_number_input)
-        case operation_input if operation_input == "5":
+        case "5":
             c_number = float(pow(a_number_input, b_number_input))
-        case operation_input if operation_input == "6":
+        case "6":
             c_number = a_number_input ** (1 / b_number_input)
     print(c_number)
 

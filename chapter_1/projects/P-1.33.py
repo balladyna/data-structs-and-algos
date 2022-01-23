@@ -16,31 +16,43 @@ operation_message = """Choose mathematical operation:
     5 for ^
     6 for √: """
 
-# def calculate():
 while True:
-    a_number_input = input(a_number_message)
-    operation_input = input(operation_message)
-    b_number_input = input(b_number_message)
-    c_number = c_number + c_number
-    if a_number_input.isnumeric() and operation_input.isnumeric() and b_number_input.isnumeric():
-        if operation_input == "1":
-            c_number = (float(a_number_input) + float(b_number_input))
-        elif operation_input == "2":
-            c_number = (float(a_number_input) - float(b_number_input))
-        elif operation_input == "3":
-            c_number = (float(a_number_input) * float(b_number_input))
-        elif operation_input == "4":
-            c_number = (float(a_number_input) / float(b_number_input))
-        elif operation_input == "5":
-            c_number = (pow(float(a_number_input), float(b_number_input)))
-        elif operation_input == "6":
-            c_number = float(a_number_input) ** (1 / float(b_number_input))
-        print(c_number)
+    while True:
+        a_number_input = input(a_number_message)
+        operation_input = input(operation_message)
+        b_number_input = input(b_number_message)
         c_number += c_number
-        continue
-    else:
-        if a_number_input == "c" or operation_input == "c" or b_number_input == "c":
-            break
-        if a_number_input == "e" or operation_input == "e" or b_number_input == "e":
-            exit()
+        if a_number_input.isnumeric() and operation_input.isnumeric() and b_number_input.isnumeric():
+            match operation_input:
+                case "1":
+                    c_number = (float(a_number_input) + float(b_number_input))
+                case "2":
+                    c_number = (float(a_number_input) - float(b_number_input))
+                case "3":
+                    c_number = (float(a_number_input) * float(b_number_input))
+                case "4":
+                    c_number = (float(a_number_input) / float(b_number_input))
+                case "5":
+                    c_number = (pow(float(a_number_input), float(b_number_input)))
+                case "6":
+                    c_number = float(a_number_input) ** (1 / float(b_number_input))
+            print(c_number)
+            c_number += c_number
+            continue
+        else:
+            match a_number_input:
+                case "c":
+                    break
+                case "e":
+                    exit()
+            match operation_input:
+                case "c":
+                    break
+                case "e":
+                    exit()
+            match b_number_input:
+                case "c":
+                    break
+                case "e":
+                    exit()
 

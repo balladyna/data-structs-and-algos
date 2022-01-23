@@ -6,10 +6,10 @@ from datetime import date, timedelta
 import random
 import calendar
 
-birthday_list = []
+birthdays_list = []
 
 
-def generate_birthday(sample_list):
+def generate_birthdays(sample_list):
     first_jan = date.today().replace(day=1, month=1)
 
     random_day = first_jan + timedelta(days=random.randint(0, 365 if calendar.isleap(first_jan.year) else 364))
@@ -27,15 +27,13 @@ n = 5
 
 
 while n <= 100:
-    n = n
     for number in range(0, n):
-        generate_birthday(birthday_list)
-        # print(birthday_list)
-    test_group = is_duplicate(birthday_list)
+        generate_birthdays(birthdays_list)
+    test_group = is_duplicate(birthdays_list)
     if test_group:
         print(str(n) + " " + "There are people with the same birthday")
-        birthday_list.clear()
+        birthdays_list.clear()
     else:
         print(str(n) + " " + "There are no duplicate of birthday")
-        birthday_list.clear()
+        birthdays_list.clear()
     n += 5
