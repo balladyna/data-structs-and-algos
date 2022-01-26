@@ -22,7 +22,8 @@ class Vector:
             result[j] = self[j] + other[j]
         return result
 
-
+    def __neg__(self):
+        return -self._coords
 
     def __eq__(self, other):
         return self._coords == other._coords
